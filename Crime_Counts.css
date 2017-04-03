@@ -1,0 +1,13 @@
+.argument .state-background {
+    background: lightblue;
+}
+
+.data .state-background {
+	background: lightgreen;
+}
+
+.intro p {
+	color: darkblue;
+	text-indent: 50px;
+}
+
