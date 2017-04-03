@@ -18,14 +18,14 @@ type: data
 
 The original data set (seen below) is over 1 GB of data even in the csv format.  Most of the variables in this dataset are unncessary, as we are only interested in the Year, District, and the crime reported (Primary.Type for a textual represention or IUCR for the Illinois Uniform Crime Reporting code).
 
+This format was both unyieldly and time-consuming to work with.  For this project a more compact form of the data consisting of counts was desired.  This was achieved via the DataTransformation.R script, which reads in the original csv, compacts the data into counts of incidences per charge, and then writes it out to a new csv for use.
+
+This new format is both easier to work, less resource intensive, and provides all the necessary data.
+***
 ```{r}
 crime <- read.csv("Crimes_2001_to_present.csv", nrows = 10)
 names(crime)
 ```
-
-This format was both unyieldly and time-consuming to work with.  For this project a more compact form of the data consisting of counts was desired.  This was achieved via the DataTransformation.R script, which reads in the original csv, compacts the data into counts of incidences per charge, and then writes it out to a new csv for use.
-
-This new format is both easier to work, less resource intensive, and provides all the necessary data.
 
 
 Data Presentation
@@ -62,8 +62,6 @@ distpercs = function(cr) {
 # make and return the data frame
 dd = data.frame(District = factor(sort(unique(counts$District))),
    Overall = distpercs("Total"),
-   Arson = distpercs("Arson"),
-   Assualt = distpercs("Assualt"),
    Drugs = distpercs("Narcotics"),
    Homicide = distpercs("Homicide"),
    Kidnapping = distpercs("Kidnapping"),
@@ -81,4 +79,4 @@ This is a tool for exploration and education.  The key use of it is in planning 
 * Identifying increases in other criminal activity despite a drop in a major offense category.
 * Observing general changes in criminal activity levels.
 * Selecting Districts to test out new programs.
-* Selecting Districts whose programs and initiatives are worht copying.
+* Selecting Districts whose programs and initiatives are worth copying.
