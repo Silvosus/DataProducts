@@ -1,4 +1,4 @@
-# DataPorducts
+# DataProducts
 
 This repository is Project 3 for the Developing Data Products course on Coursera,
 
